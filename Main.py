@@ -29,14 +29,11 @@ def recommend(option):
 if __name__=="__main__":
 
     similarity = pickle.load(open("similarity.pkl","rb"))
-    movies_list = pickle.load(open("movies.pkl","rb"))
-    details = pickle.load(open("details.pkl","rb"))
-    movies=pd.DataFrame(movies_list)
-
+    movies = pickle.load(open("movies.pkl","rb"))
 
     st.title("Movie Recommendation System")
 
-    option=st.selectbox("Enter Movie You want to select:" , movies_list['title'].values)
+    option=st.selectbox("Enter Movie You want to select:" , movies['title'].values)
 
     if st.button("Recommend"):
         recommended_names, recommended_poster=recommend(option)
