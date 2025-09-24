@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 def fetch_poster(movie_id):
-    url = "https://api.themoviedb.org/3/movie/{}?api_key=f7f2faaba0ad50095df7ea0802b878a7".format(movie_id)
+    url = "https://api.themoviedb.org/3/movie/{}?api_key=<YOUR API KEY>".format(movie_id)
     data = requests.get(url)
     data=data.json()
     poster_path=data['poster_path']
@@ -54,3 +54,4 @@ if __name__=="__main__":
         with col5:
             st.text(recommended_names[4])
             st.image(recommended_poster[4])
+
